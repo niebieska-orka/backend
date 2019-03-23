@@ -3,18 +3,17 @@ from django.utils import timezone
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=100)
-    surname = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    surname = models.CharField(max_length=100, blank=True, null=True)
     mail = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
 
 
 class Game(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=550)
-    picture_url = models.CharField(max_length=150)
-    publisher = models.CharField(max_length=100)
-    score = models.FloatField()
+
+    def __str__(self):
+        return self.title
 
 
 class Reservation(models.Model):
