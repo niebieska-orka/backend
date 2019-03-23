@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse
-from rest_framework import viewsets
+from rest_framework import viewsets, response
 from boardGames.rental.serializers import UserSerializer, GroupSerializer
 
 
@@ -9,7 +9,7 @@ def index(request):
 
 
 def login(request):
-    return HttpResponse("Someone wants to log in")
+    return response()
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -26,4 +26,3 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-

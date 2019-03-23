@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78242c94-b296-43a8-9349-36f66c7f5e20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boardGames/rental/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/boardGames/rental/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boardGames/rental/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/boardGames/rental/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boardGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/boardGames/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boardGames/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+            <state relative-caret-position="280">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
                 <element signature="e#634#671#0" expanded="true" />
               </folding>
@@ -72,8 +73,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boardGames/rental/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+            <state relative-caret-position="469">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/boardGames/rental/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,9 +114,10 @@
         <option value="$PROJECT_DIR$/boardGames/rental/models.py" />
         <option value="$PROJECT_DIR$/boardGames/settings.py" />
         <option value="$PROJECT_DIR$/boardGames/rental/apps.py" />
-        <option value="$PROJECT_DIR$/boardGames/rental/views.py" />
         <option value="$PROJECT_DIR$/boardGames/rental/urls.py" />
         <option value="$PROJECT_DIR$/boardGames/urls.py" />
+        <option value="$PROJECT_DIR$/boardGames/rental/serializers.py" />
+        <option value="$PROJECT_DIR$/boardGames/rental/views.py" />
       </list>
     </option>
   </component>
@@ -194,12 +211,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553347928096</updated>
       <workItem from="1553347929840" duration="629000" />
-      <workItem from="1553348832349" duration="2360000" />
+      <workItem from="1553348832349" duration="3803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2989000" />
+    <option name="totallyTimeSpent" value="4432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="0" width="1240" height="830" extended-state="0" />
@@ -219,7 +236,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28653294" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.11318052" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -272,18 +289,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/boardGames/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="280">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
             <element signature="e#634#671#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/boardGames/rental/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/boardGames/rental/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        <state relative-caret-position="469">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
