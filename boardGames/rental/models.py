@@ -8,9 +8,6 @@ class Person(models.Model):
     mail = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.mail
-
 
 class Game(models.Model):
     title = models.CharField(max_length=100)
@@ -18,9 +15,6 @@ class Game(models.Model):
     picture_url = models.CharField(max_length=150)
     publisher = models.CharField(max_length=100)
     score = models.FloatField()
-
-    def __str__(self):
-        return self.title
 
 
 class Reservation(models.Model):
@@ -30,7 +24,3 @@ class Reservation(models.Model):
     borrow_date = models.DateTimeField()
     taken_to_home = models.BooleanField(default=True)
     game_returned = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.game
-
