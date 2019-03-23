@@ -150,3 +150,12 @@ class GameApiView(APIView):
         return Response(serializer.data)
 
 
+class GetReservationByUserApiView(APIView):
+    def get(self, request, pk, format=None):
+        user = Person.objects.get(pk=pk)
+        reservation = Reservation.objects.filter(borrower__borrower=user)
+        serializer = ReservationSerializer(reservation)
+        return Response(serializer.data)
+
+
+
