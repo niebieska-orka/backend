@@ -8,6 +8,10 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
 
+def login(request):
+    return HttpResponse("Someone wants to log in")
+
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
