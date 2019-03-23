@@ -153,9 +153,19 @@ class GameApiView(APIView):
 class GetReservationByUserApiView(APIView):
     def get(self, request, pk, format=None):
         user = Person.objects.get(pk=pk)
-        reservation = Reservation.objects.filter(borrower__borrower=user)
-        serializer = ReservationSerializer(reservation)
-        return Response(serializer.data)
+        reservation = Reservation.objects.all().filter(borrower__mail=user.mail)
+        print(reservation)
+        li = []
+        for res in reservation:
+            serializer = ReservationSerializer(res)
+            li.append(serializer.data)
+        print(li)
+        return HttpResponse(li)
 
 
-
+class AddGameApiView(APIView):
+    def post(self, request, format=None):
+        game_name = request.GET["title"]
+        g = Game(title=game_name)
+        g.save()
+        return HttpResponse(200)

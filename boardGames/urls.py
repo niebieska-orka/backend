@@ -19,7 +19,7 @@ from rest_framework import routers
 from boardGames.rental import views
 from django.contrib import admin
 
-from boardGames.rental.views import ReservationApiView, ReservationApiView2, PersonApiView2, GameApiView2, PersonApiView, GameApiView, GetReservationByUserApiView
+from boardGames.rental.views import ReservationApiView, ReservationApiView2, PersonApiView2, GameApiView2, PersonApiView, GameApiView, GetReservationByUserApiView, AddGameApiView
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -40,5 +40,6 @@ urlpatterns = [
     path('person/', PersonApiView2.as_view()),
     path('game/<pk>', GameApiView.as_view()),
     path('person/<pk>', PersonApiView.as_view()),
-    path('reservation/person/<pk>', GetReservationByUserApiView.as_view())
+    path('reservation/person/<pk>', GetReservationByUserApiView.as_view()),
+    path('game/add/', AddGameApiView.as_view())
 ]
