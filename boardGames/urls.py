@@ -24,6 +24,7 @@ from boardGames.rental.views import ReservationApiView, ReservationApiView2, Per
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'games', views.GameViewSet)
 #router.register(r'reservation', ReservationApiView.as_view())
 
 # Wire up our API using automatic URL routing.
