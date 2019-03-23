@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class QuickstartConfig(AppConfig):
-    name = 'rental'
+class RentalConfig(AppConfig):
+    name = 'boardGames.rental'

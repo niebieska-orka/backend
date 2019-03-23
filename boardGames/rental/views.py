@@ -1,6 +1,11 @@
 from django.contrib.auth.models import User, Group
+from django.http import HttpResponse
 from rest_framework import viewsets
 from boardGames.rental.serializers import UserSerializer, GroupSerializer
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +22,4 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
