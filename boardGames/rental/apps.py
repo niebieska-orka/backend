@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RentalConfig(AppConfig):
+class QuickstartConfig(AppConfig):
     name = 'rental'
