@@ -11,10 +11,6 @@ class Person(models.Model):
 
 class Game(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=550)
-    picture_url = models.CharField(max_length=150)
-    publisher = models.CharField(max_length=100)
-    score = models.FloatField()
 
 
 class Reservation(models.Model):
