@@ -36,6 +36,14 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 
+class GameViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows all games to be viewed or edited.
+    """
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+
+
 class ReservationApiView(APIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
@@ -119,7 +127,7 @@ class GameApiView(APIView):
     def get_object(self, pk):
         try:
             return Game.objects.get(pk=pk)
-        except Reservation.DoesNotExist:
+        except Game.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
