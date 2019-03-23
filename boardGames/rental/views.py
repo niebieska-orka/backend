@@ -1,6 +1,8 @@
+from django.utils import timezone
+
 from django.conf.urls import url
 from django.contrib.auth.models import User, Group
-from django.http import HttpResponse, QueryDict
+from django.http import HttpResponse, QueryDict, HttpResponseRedirect
 from rest_framework import viewsets, response, permissions
 from rest_framework.utils import json
 from rest_framework.views import APIView
@@ -54,21 +56,33 @@ class ReservationApiView(APIView):
 
 class ReservationApiView2(APIView):
     def post(self, request, format=None):
-        data = request.GET
-        data2 = QueryDict('', mutable=True)
-        data2.update(data)
-        print(data2)
-        id_person = request.GET["borrower"]
-        data2["borrower"] = "http://localhost:8000/person/"+id_person+"/"
-        id_game = request.GET["game"]
-        data2["game"] = "http://localhost:8000/game/"+id_game+"/"
-        #serializer = PersonSerializer(data=data2)
-        print(data2)
-        serializer = ReservationSerializer(data=data2)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        print(request.GET["game"])
+        person_id = request.GET["borrower"]
+        game_id = request.GET["game"]
+        date = request.GET["borrow_date"]
+        print(person_id, game_id, date)
+        print(timezone.now)
+       # r = Reservation(borrow_date=date, borrower_id=person_id, game_id=game_id)
+        r = Reservation(borrower=Person.objects.get(pk=person_id), game=Game.objects.get(pk=game_id), borrow_date=date)
+        print(r)
+        r.save()
+        return HttpResponse(200)
+        # data = request.GET
+        # data2 = QueryDict('', mutable=True)
+        # data2.update(data)
+        # print(data2)
+        # id_person = request.GET["borrower"]
+        # data2["borrower"] = "http://localhost:8000/person/"+id_person+"/"
+        # id_game = request.GET["game"]
+        # data2["game"] = "http://localhost:8000/game/"+id_game+"/"
+        # #serializer = PersonSerializer(data=data2)
+        # print(data2)
+        # serializer = ReservationSerializer(data=data2)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class PersonApiView2(APIView):

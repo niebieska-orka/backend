@@ -22,6 +22,9 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ReservationSerializer(serializers.HyperlinkedModelSerializer):
+    borrower = serializers.StringRelatedField(many=True)
+    game = serializers.StringRelatedField(many=True)
+
     class Meta:
         model = Reservation
         fields = ('borrower', 'game', 'reservation_date', 'borrow_date', 'taken_to_home', 'game_returned')
