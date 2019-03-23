@@ -28,6 +28,9 @@ class Reservation(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     reservation_date = models.DateTimeField(default=timezone.now)
     borrow_date = models.DateTimeField()
+    taken_to_home = models.BooleanField(default=True)
+    game_returned = models.BooleanField(default=False)
 
     def __str__(self):
         return self.game
+
