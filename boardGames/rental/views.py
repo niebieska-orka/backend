@@ -152,8 +152,9 @@ class GameApiView(APIView):
 
 
 class GetReservationByUserApiView(APIView):
-    def get(self, request, pk, format=None):
-        user = Person.objects.get(pk=pk)
+    def get(self, request, format=None):
+        print(request.GET['mail'])
+        user = Person.objects.get(mail__exact=request.GET['mail'])
         reservation = Reservation.objects.all().filter(borrower__mail=user.mail)
         print(reservation.__class__)
         data = serializers.serialize('json', reservation)

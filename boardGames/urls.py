@@ -40,6 +40,6 @@ urlpatterns = [
     path('person/', PersonApiView2.as_view()),
     path('game/<pk>', GameApiView.as_view()),
     path('person/<pk>', PersonApiView.as_view()),
-    path('reservation/person/<pk>', GetReservationByUserApiView.as_view()),
+    path('reservation/person/', GetReservationByUserApiView.as_view()),
     path('game/add/', AddGameApiView.as_view())
 ]
