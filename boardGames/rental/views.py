@@ -4,6 +4,7 @@ from django.conf.urls import url
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse, QueryDict, HttpResponseRedirect
 from rest_framework import viewsets, response, permissions
+from django.core import serializers
 from rest_framework.utils import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -154,13 +155,9 @@ class GetReservationByUserApiView(APIView):
     def get(self, request, pk, format=None):
         user = Person.objects.get(pk=pk)
         reservation = Reservation.objects.all().filter(borrower__mail=user.mail)
-        print(reservation)
-        li = []
-        for res in reservation:
-            serializer = ReservationSerializer(res)
-            li.append(serializer.data)
-        print(li)
-        return HttpResponse(li)
+        print(reservation.__class__)
+        data = serializers.serialize('json', reservation)
+        return HttpResponse(data)
 
 
 class AddGameApiView(APIView):
