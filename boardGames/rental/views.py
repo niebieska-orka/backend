@@ -41,7 +41,7 @@ class GameViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows all games to be viewed or edited.
     """
-    queryset = Game.objects.all()#.order_by('-title')
+    queryset = Game.objects.all().order_by('-title')
     serializer_class = GameSerializer
     # for game in queryset:
     #     if not game.description:
