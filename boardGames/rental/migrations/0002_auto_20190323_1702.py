@@ -9,6 +9,7 @@ class Migration(migrations.Migration):
         ('rental', '0001_initial'),
     ]
 
+
     operations = [
         migrations.AddField(
             model_name='reservation',

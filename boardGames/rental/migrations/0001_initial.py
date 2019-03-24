@@ -22,6 +22,10 @@ class Migration(migrations.Migration):
                 ('picture_url', models.CharField(max_length=150)),
                 ('publisher', models.CharField(max_length=100)),
                 ('score', models.FloatField()),
+                ('playing_time', models.FloatField()),
+                ('min_age', models.FloatField()),
+                ('min_players', models.FloatField()),
+                ('max_players', models.FloatField()),
             ],
         ),
         migrations.CreateModel(

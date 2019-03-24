@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from boardGames.rental.models import Game, Reservation, Person
 from django.http import Http404
 from rest_framework import status
+from boardgamegeek import BGGClient, BGGItemNotFoundError, BGGApiError
 
 from boardGames.rental.serializers import UserSerializer, GroupSerializer, ReservationSerializer, GameSerializer, PersonSerializer
 
@@ -40,8 +41,25 @@ class GameViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows all games to be viewed or edited.
     """
-    queryset = Game.objects.all()
+    queryset = Game.objects.all()#.order_by('-title')
     serializer_class = GameSerializer
+    # for game in queryset:
+    #     if not game.description:
+    #         try:
+    #             bgg = BGGClient()
+    #             g = bgg.game(game.title)
+    #             game.picture_url = g.image
+    #             game.description = g.description
+    #             game.min_players = g.min_players
+    #             game.max_players = g.max_players
+    #             game.min_age = g.min_age
+    #             game.playing_time = g.playing_time / 60
+    #             game.score = g.rating_average
+    #             game.publisher = g.designers[0]
+    #             game.save()
+    #         except (BGGItemNotFoundError, BGGApiError):
+    #             pass
+    # print("!!!!!!!!!")
 
 
 class ReservationApiView(APIView):
@@ -126,13 +144,26 @@ class GameApiView(APIView):
 
     def get_object(self, pk):
         try:
-            return Game.objects.get(pk=pk)
+            game = Game.objects.get(pk=pk)
+            if not game.description:
+                bgg = BGGClient()
+                g = bgg.game(game.title)
+                game.picture_url = g.image
+                game.description = g.description
+                game.min_players = g.min_players
+                game.max_players = g.max_players
+                game.min_age = g.min_age
+                game.playing_time = g.playing_time / 60
+                game.score = g.rating_average
+                game.publisher = g.designers[0]
+                game.save()
+            return game
         except Game.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
-        reservation = self.get_object(pk)
-        serializer = GameSerializer(reservation)
+        game = self.get_object(pk)
+        serializer = GameSerializer(game)
         return Response(serializer.data)
 
 

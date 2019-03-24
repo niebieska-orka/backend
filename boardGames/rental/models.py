@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from boardgamegeek import BGGClient
 
 
 class Person(models.Model):
@@ -18,6 +19,10 @@ class Game(models.Model):
     picture_url = models.CharField(max_length=150)
     publisher = models.CharField(max_length=100)
     score = models.FloatField()
+    playing_time = models.FloatField()
+    min_age = models.FloatField()
+    min_players = models.FloatField()
+    max_players = models.FloatField()
 
     def __str__(self):
         return self.title
